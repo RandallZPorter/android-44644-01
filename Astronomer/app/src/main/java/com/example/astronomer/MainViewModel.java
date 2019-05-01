@@ -33,7 +33,7 @@ public class MainViewModel extends AndroidViewModel {
         SunEventTimes events = sunEvents.getValue();
         if (events == null)
             events = new SunEventTimes();
-        events.sunset = sunset;
+        events.sunset = new Date(1556759700000L);
         sunEvents.setValue(events);
         lastUpdate = System.currentTimeMillis();
     }
