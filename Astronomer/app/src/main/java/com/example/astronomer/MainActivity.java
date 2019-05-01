@@ -53,6 +53,8 @@ public class MainActivity extends AppCompatActivity {
                 return;
             }
 
+            sunsetIsNext = sunEvents.sunset != null;
+
             if (sunsetIsNext)
                 nextEventTV.setText(getString(R.string.sunset_in, formatTimeInterval(now, sunEvents.sunset.getTime()), smallTime.format(sunEvents.sunset)));
             else
@@ -89,8 +91,8 @@ public class MainActivity extends AppCompatActivity {
         SimpleDateFormat ymdFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.US); //Timezone is local!
         SimpleDateFormat ymdUTCFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.US);
         SimpleDateFormat apiTimeFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss a", Locale.US);
-        apiTimeFormat.setTimeZone(utc);
-        ymdUTCFormat.setTimeZone(utc);
+//        apiTimeFormat.setTimeZone(utc);
+//        ymdUTCFormat.setTimeZone(utc);
 
         String dateStr = ymdFormat.format(date);
         String utcDateStr = ymdUTCFormat.format(date);
